@@ -107,51 +107,7 @@ public class Merger {
     	}
     }
 
-    // private void mergeRange(
-    //     int target // destination in usersData. Probably redundant.
-
-    //     // boundaries of lists in localCopy, NOT usersData!
-    //   , int localStart0  // index of first item in list0
-    //   , int localEnd0    // just past end of list0
-    //   , int localStart1  // index of first item in list1
-    //   , int localEnd1    // just past end of list0
-    //   ) {
-    //     // temp for debugging
-    //     System.out.println(
-    //         " target = "      + target  
-    //       + " localStart0 = " + localStart0
-    //       + " localEnd0 = "   + localEnd0  
-    //       + " localStart1 = " + localStart1
-    //       + " localEnd1 = "   + localEnd1  
-    //       );
-          
-    //     if( // both ranges are exhausted
-    //         localStart0 == localEnd0 && localStart1 == localEnd1
-    //       )
-    //         // solution to base case
-    //         return;  // merge is done
-    //     else{ // there is at least 1 item remaining to merge
-    //         if( // list0 exhausted
-    //             localStart0 == localEnd0
-    //           ) 
-    //            // take an item from list1
-    //             usersData.set( target++, list.get( localStart1++));
-
-    //         // similarly for exhausted list1
-    //         else if( localStart1 == localEnd1)
-    //             usersData.set( target++, list.get( localStart0++));
-            
-    //         else // items remain in both lists
-    //             // copy the smaller item
-    //             if( list.get( localStart0).compareTo( 
-    //                 list.get( localStart1)) < 0)
-    //                 usersData.set( target++, list.get( localStart0++));
-    //             else
-    //                 usersData.set( target++, list.get( localStart1++));
-    //         mergeRange( target, localStart0, localEnd0, localStart1, localEnd1);
-    //     }
     
-    // }
     /**
       @return a string representation of the user's data
      */
