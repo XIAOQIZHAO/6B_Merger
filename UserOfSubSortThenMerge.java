@@ -14,19 +14,14 @@ public class UserOfSubSortThenMerge {
           Arrays.asList(
               // data to be ignored; see README
               "z", "y"  // descending order
-              
-              // one sorted sub-list
-            , "4", "5", "6", "9"
-
-              // the other sorted sub-list
-            , "2", "3", "4", "6", "7", "J", "Q", "K"
+            , "4", "3", "6", "1", "7", "J", "Q", "K"
             
               // more data to be ignored
             , "-", "+", "*"  // descending order
             ));
 
         oneTest( "card decks"
-               , cards, 2, 6, 14 );
+               , cards, 2, 10 );
 
 	// System.out.println("z".compareTo("7"));
 	// System.out.println("6".compareTo("K"));
@@ -40,28 +35,25 @@ public class UserOfSubSortThenMerge {
      */
     private static void oneTest(
         String description
-      , ArrayList<String> mergeMe
+      , ArrayList<String> sortMe
         // indexes of sub-list boundaries; see README
-      , int start0  // index of first item in list0
-      , int start1  // index of first item in list1
-                    // = just past end of list0
-      , int nItems  // number of items in the merged list
-                    // = just past end of list1
+      , int start  // index of first item
+      , int end  // number of items in the merged list
 
                                ) {
 
-        SubSortThenMerge_Sorter merger = new SubSortThenMerge_Sorter( mergeMe);
+        SubSortThenMerge_Sorter sorter = new SubSortThenMerge_Sorter( sortMe);
 
         System.out.println( 
             System.lineSeparator()
           + description + System.lineSeparator()
-          + "before: " + merger
+          + "before: " + sorter
           );
-        merger.merge( start0, start1, nItems);
-        System.out.println( "after:  " + merger);
+        sorter.subSortThenMerge( start, end);
+        System.out.println( "after:  " + sorter);
         System.out.println(
             "sorted: "
-          + merger.isSorted( start0, nItems));
+          + sorter.isSorted( start, end));
      }
     
 
